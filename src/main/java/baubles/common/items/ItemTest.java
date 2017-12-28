@@ -2,26 +2,24 @@ package baubles.common.items;
 
 import baubles.common.Baubles;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class ItemTest extends Item//new
-{
+public class ItemTest extends Item {
 	@GameRegistry.ObjectHolder(Baubles.MODID + ":test")
-	public static final Item TEST = null;
-	public  ItemTest()
+	public static Item test = null;
+	
+	public ItemTest()
 	{
-		super();
-		this.setMaxStackSize(5);
-		this.setHasSubtypes(true);
+		this.setCreativeTab(CreativeTabs.SEARCH);
+		this.setMaxStackSize(64);
 		this.setMaxDamage(0);
-		this.setCreativeTab(CreativeTabs.TOOLS);
 	}
 	@SubscribeEvent
-	public static void registerItems(RegistryEvent.Register<Item> event) {
-		event.getRegistry().register((new ItemRing()).setUnlocalizedName("Test").setRegistryName("test"));
+	public static void Register(RegistryEvent.Register<Item> event)
+	{
+		event.getRegistry().register(new ItemTest().setUnlocalizedName("Test").setRegistryName("test"));
 	}
 }

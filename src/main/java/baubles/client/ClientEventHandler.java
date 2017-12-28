@@ -15,6 +15,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
 import baubles.common.items.ItemRing;
+import baubles.common.items.ItemTest;
 import baubles.common.network.PacketHandler;
 import baubles.common.network.PacketOpenBaublesInventory;
 
@@ -23,7 +24,9 @@ public class ClientEventHandler
 	@SubscribeEvent
 	public void registerItemModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(ItemRing.RING, 0, new ModelResourceLocation("baubles:ring", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(ItemTest.test, 0, new ModelResourceLocation("baubles:test", "inventory"));
 	}
+
 
 	@SubscribeEvent
 	public void playerTick(PlayerTickEvent event) {
